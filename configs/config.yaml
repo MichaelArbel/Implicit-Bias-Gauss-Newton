@@ -1,0 +1,30 @@
+seed: 1
+system:
+  dtype: 32
+  device: 0
+    
+model:
+  d_int: 10
+  H: 5000
+  teacher_H: 5
+  non_linearity: 'SiLU'
+  beta: 1.
+  copy_teacher_network: False
+data:
+  n_train: 500
+  n_test: 10000
+metrics: 
+  dist_freq_eval: 100
+  save_freq: 100
+optimizer:
+  is_linear: False
+  lr: 10.
+  use_GN: True
+  max_iter: 2000000
+init: 
+  mean: 0.
+  std: 0.001
+  mean_teacher: 0.
+  std_teacher: 1.
+  pre_train: False
+  pre_train_iter: 10
